@@ -1,12 +1,12 @@
 services:
   influxdb2:
-    image: influxdb:arm64-2.7.11
+    image: influxdb:2.7.11
     container_name: influxdb
     restart: unless-stopped
     ports:
       - 8086:8086
     env_file:
-      - .env.sim
+      - .env.prod
     networks:
       - iotData
     volumes:
@@ -14,11 +14,11 @@ services:
       - influxdb2-config:/etc/influxdb2
 
   telegraf:
-    image: telegraf:arm64-1.33.3
+    image: telegraf:1.33.3
     container_name: telegraf
     restart: unless-stopped
     env_file:
-      - .env.sim
+      - .env.prod
     volumes:
       - ./telegraf:/etc/telegraf  # Mount the Telegraf configuration file
       - ./telegraf/logs:/var/log/telegraf
@@ -30,17 +30,19 @@ services:
       - iotData 
 
   grafana:
-    image: grafana/grafana:arm64-11.6.0
+    image: grafana/grafana:11.6.0
     container_name: grafana
     restart: unless-stopped
     ports:
       - "3000:3000"
     env_file:
-      - .env.sim
+      - .env.prod
     networks:
       - iotData
     volumes:
       - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards 
 
 volumes:
   influxdb2-data:
