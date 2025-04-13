@@ -1,0 +1,54 @@
+services:
+  influxdb2:
+    image: influxdb:2.7.11
+    container_name: influxdb
+    restart: unless-stopped
+    ports:
+      - 8086:8086
+    env_file:
+      - .env.sim
+    networks:
+      - iotData
+    volumes:
+      - influxdb2-data:/var/lib/influxdb2
+      - influxdb2-config:/etc/influxdb2
+
+  telegraf:
+    image: telegraf:1.33.3
+    container_name: telegraf
+    restart: unless-stopped
+    env_file:
+      - .env.sim
+    volumes:
+      - ./telegraf:/etc/telegraf  # Mount the Telegraf configuration file
+      - ./telegraf/logs:/var/log/telegraf
+    depends_on:
+      - influxdb2
+    ports:
+      - '8125:8125'
+    networks:
+      - iotData 
+
+  grafana:
+    image: grafana/grafana:11.6.0
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.sim
+    networks:
+      - iotData
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards 
+
+volumes:
+  influxdb2-data:
+  influxdb2-config:
+  grafana-data:
+
+networks:
+  iotData:
+    driver: bridge

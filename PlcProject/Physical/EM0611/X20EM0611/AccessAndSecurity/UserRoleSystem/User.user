@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="telegraf" Type="User">
+    <Property ID="Password" Value="$argon2id$v=19$m=512,t=70,p=1$3BsU597d5903$KQakvYr7r3co3Ll++WkSovoDqcmoneJ/PnyfbqM6jOA" Description="1234" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="DataLogger" />
+    </Group>
+  </Element>
+</Configuration>

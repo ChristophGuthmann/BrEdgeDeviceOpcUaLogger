@@ -1,0 +1,15 @@
+apiVersion: 1
+# .env not possible -> todo: create start-up script
+datasources:
+  - name: Influxdb
+    type: influxdb
+    uid: influxdb2_flux
+    access: proxy
+    url: http://influxdb:8086
+    jsonData:
+      version: Flux
+      organization: CG-Automation
+      defaultBucket: PlcData
+      tlsSkipVerify: true
+    secureJsonData:
+      token: mysecrettoken

@@ -1,0 +1,36 @@
+## Automation Studio
+# Ignore AR versions as those are not considered part of the project
+AS/System/
+
+# Ignore build results
+Binaries/
+
+# Ignore debugging configurations (Watch,...)
+Diagnosis/
+
+# But save the watch windows and task trace configurations (if it should stay in the repository) - optional, uncomment if needed
+#!/Diagnosis/**/
+#!/Diagnosis/**/*.PVM
+#!/Diagnosis/**/*.tc
+
+# Include all the safety related .set files - all the .set files in the Physical folder
+!/Physical/**/*.set
+
+# Ignore standard temp folder
+Temp/
+
+# Ignore upgrades as those are not considered part of the project source code
+Upgrades/
+
+# Ignore user settings file
+*.set
+
+# Ignore is open indication
+*.isopen
+
+# Ignore debug logs
+*/debug.log
+
+# Ignore more stuff to your liking
+# ...
+ 

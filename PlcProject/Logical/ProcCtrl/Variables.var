@@ -1,0 +1,42 @@
+VAR
+	fbPid : MTBasicsPID;
+	rActValue : REAL;
+	rSetValue : REAL;
+	fbDelay : MTBasicsTimeDelay;
+	fbPT1 : MTBasicsPT1;
+	stProcessSimConfig : tstProcessSim;
+	stPidPar : MTPIDParametersType;
+	rCount : REAL;
+	rValue : REAL;
+	iRandom : ARRAY[0..4] OF INT;
+END_VAR
+(*Simulation*)
+VAR
+	dtUtcTime : DATE_AND_TIME;
+	fbUtcDTGetTime : UtcDTGetTime;
+	fbRtInfo : RTInfo;
+	udiCycleTime_us : UDINT;
+	udiTimeCount_us : UDINT;
+END_VAR
+VAR CONSTANT
+	rPI : REAL := 3.14159;
+END_VAR
+VAR
+	rTimeCount_s : REAL;
+	rTest : REAL;
+END_VAR
+(*Simulation Values*)
+VAR
+	diState : DINT;
+END_VAR
+VAR CONSTANT
+	diSTATE_STOPPED : DINT := 0;
+	diSTATE_RUNNING : DINT := 10;
+END_VAR
+VAR
+	fbMtBasicLimiter : MTBasicsLimiter;
+	rActVelocity : REAL;
+	rMotorTemp : REAL;
+	iMaxStopTime : INT;
+	iMaxRunTime : INT;
+END_VAR

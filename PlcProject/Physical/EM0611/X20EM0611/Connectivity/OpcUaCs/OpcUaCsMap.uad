@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="6.0"?>
+<OpcUaSource FileVersion="10">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <Module Name="&lt;Default&gt;">
+    <Task Name="Program">
+      <Variable Name="rCount" />
+      <Variable Name="rSine" />
+    </Task>
+    <Task Name="ProcCtrl">
+      <Variable Name="rActVelocity" />
+      <Variable Name="rMotorTemp" />
+      <Variable Name="diState" />
+    </Task>
+  </Module>
+</OpcUaSource>

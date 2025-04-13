@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio WorkingVersion="6.1" FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="X20BM11" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20EM0611" TargetConnector="IF6" />
+  </Module>
+  <Module Name="X20BM11_a" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM11_b" Type="X20BM11" Version="1.1.0.0">
+    <Connection Connector="X2X1" TargetModule="X20BM11_a" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20CM8281" Type="X20CM8281" Version="1.5.0.0">
+    <Connection Connector="SS1" TargetModule="X20TB12_a" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11_a" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20CMR010" Type="X20CMR010" Version="1.4.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12_b" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11_b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="DatapointInfoEnable" Value="on" />
+    <Parameter ID="OperatingDataEnable" Value="on" />
+    <Parameter ID="RelHumInfoEnable" Value="on" />
+    <Parameter ID="TempInfoEnable" Value="on" />
+  </Module>
+  <Module Name="X20EM0611" Type="X20EM0611" Version="1.1.1.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="HostName" Value="cg-automation" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.1.50" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="ActivateSnmp" Value="1" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="EplHostName" Value="cg-automation" />
+      <Parameter ID="CycleTime" Value="800" />
+      <Parameter ID="HostName" Value="cg-automation" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="OpcUaLogDemo_EM0611" />
+    <Parameter ID="EnableUsbRemoteInstall" Value="1" />
+    <Parameter ID="TimerDeviceType" Value="EPLX2X" />
+    <Parameter ID="TimerDevice" Value="X20EM0611.IF3" />
+    <Parameter ID="IdleTaskClass" Value="4" />
+    <Parameter ID="TaskClassIdleTime" Value="2400" />
+    <Parameter ID="Cyclic1Duration" Value="800" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="2400" />
+    <Parameter ID="Cyclic2Tolerance" Value="0" />
+    <Parameter ID="Cyclic3Duration" Value="4000" />
+    <Parameter ID="Cyclic3Tolerance" Value="0" />
+    <Parameter ID="Cyclic8Duration" Value="9600" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USER" />
+    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Parameter ID="EthernetHostName" Value="cg-automation" />
+    <Parameter ID="ActivateFtpServer" Value="1" />
+    <Parameter ID="FTPProtocol" Value="1" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="PLC" />
+    <Parameter ID="FtpUserPassword1" Value="bDesm58/cQRkURzOhN7y21+dfhrAC+sJ92qeVEDnjI0=" Description="admin" />
+    <Parameter ID="FtpUserSalt1" Value="O6GTINpH" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
+    <Parameter ID="ActivateWebServer" Value="1" />
+    <Parameter ID="ActivateSdm" Value="1" />
+  </Module>
+  <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12_a" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB12_b" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20ZF0000" Type="X20ZF0000" Version="1.2.2.0">
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM11" TargetConnector="SL1" />
+  </Module>
+</Hardware>

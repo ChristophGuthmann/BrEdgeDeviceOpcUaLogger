@@ -1,0 +1,4 @@
+VAR
+	rCount : {REDUND_UNREPLICABLE} REAL := 0.0;
+	rSine : REAL;
+END_VAR

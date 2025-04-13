@@ -1,0 +1,31 @@
+# Ignore Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Ignore Environment files
+*.env
+
+# Ignore Docker build and image files
+**/*.tar
+**/*.tgz
+**/*.gz
+
+# Ignore container data
+# volumes/
+
+# Ignore Docker metadata
+.docker/
+
+# Ignore IDE/Editor specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+*.tmp
