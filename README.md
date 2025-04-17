@@ -109,7 +109,7 @@ After startup, the following services are available:
 
 ## 📜 License
 
-This project is licensed under the MIT License. Please verify the licensing conditions of any third-party tools used (e.g. Docker, Grafana, B&R software).
+- This project is licensed under the MIT License. Please verify the licensing conditions of any third-party tools used (e.g. Docker, Grafana, B&R software).
 ---
 
 
