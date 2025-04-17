@@ -101,8 +101,6 @@ After startup, the following services are available:
 │   │   ├── opcua.conf      # OPC UA specific config
 │   │   └── general.conf    # General input/output settings
 │   └── logs/
-└── docs/
-    └── certificates.md (optional)
 ```
 
 ---
