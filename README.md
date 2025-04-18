@@ -105,6 +105,25 @@ After startup, the following services are available:
 
 ---
 
+## ⚙️ Example OPC UA Configuration
+The file `telegraf/telegraf.d/opcua.conf` contains the configuration for Telegraf’s OPC UA input plugin. Below is an example snippet to configure a single node
+``` 
+[[inputs.opcua.nodes]]
+   name = "State"
+   namespace = "5"
+   identifier_type = "s"
+   identifier = "::ProcCtrl:diState"
+   default_tags = { tag1 = "ProcCtrl", tag2 = "State" }
+```
+| Field           | Description                                                                |
+|----------------|----------------------------------------------------------------------------|
+| `name`          | Label for the node (used as the field name in InfluxDB)  |
+| `namespace`     | OPC UA namespace index (check OPC-UA Client) |
+| `identifier_type` | Type of identifier (`s` = string, `i` = numeric, etc.)|
+| `identifier`    | The actual NodeId identifier (check OPC-UA Client) |
+| `default_tags`  | Optional tags for easier filtering and grouping in InfluxDB |
+
+
 ## 📜 License
 
 - This project is licensed under the MIT License. Please verify the licensing conditions of any third-party tools used (e.g. Docker, Grafana, B&R software).
